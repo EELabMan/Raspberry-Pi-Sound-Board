@@ -10,15 +10,15 @@ GPIO.setup(25, GPIO.IN)
 
 pygame.mixer.init(48000, -16, 1, 1024)
 
-sndA = pygame.mixer.Sound("buzzer.wav")
-sndB = pygame.mixer.Sound("clap.wav")
-sndC = pygame.mixer.Sound("laugh.wav")
+sndA = pygame.mixer.Sound("Horse.wav")
+sndB = pygame.mixer.Sound("Dog.wav")
+sndC = pygame.mixer.Sound("Drum.wav")
 
 soundChannelA = pygame.mixer.Channel(1)
 soundChannelB = pygame.mixer.Channel(2)
 soundChannelC = pygame.mixer.Channel(3)
 
-print "Sampler Ready."
+print ("Sampler Ready.")
 
 while True:
    try:
@@ -28,6 +28,6 @@ while True:
          soundChannelB.play(sndB)
       if (GPIO.input(25) == True):
          soundChannelC.play(sndC)
-      sleep(.01)
+      sleep(.4)
    except KeyboardInterrupt:
       exit()
